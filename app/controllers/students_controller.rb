@@ -9,12 +9,13 @@ class StudentsController < ApplicationController
   end
 
   def new
+    @student = Student.new
     render :new
   end
 
   def create
     @student = Student.create(student_params)
-    redirect_to student_path(@student)
+    redirect_to students_path
   end
 
   private
